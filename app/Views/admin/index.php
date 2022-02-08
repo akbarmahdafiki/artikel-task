@@ -74,6 +74,7 @@
                         <div class="form-group mb-3">
                             <label for="inputtag">Tag Artikel</label>
                             <input class="form-control" type="text" name="tag_artikel" id="inputtag">
+                            <p></p>
                         </div>
 
                         <div class="form-group mb-3">

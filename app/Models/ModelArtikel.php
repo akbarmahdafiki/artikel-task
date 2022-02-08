@@ -55,7 +55,6 @@ class ModelArtikel extends Model
         $this->db = db_connect();
         $this->request = $request;
         $this->dt = $this->db->table($this->table);
-
     }
 
     public function getDatatablesQuery()
