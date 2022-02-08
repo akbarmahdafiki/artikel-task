@@ -10,11 +10,7 @@ class Artikel extends BaseController
 {
     public function index()
     {
-        $data = [
-            'title' => 'User List'
-        ];
-
-        return view('admin/index', $data);
+        return view('admin/index');
     }
 
     public function ajaxlist()
@@ -31,7 +27,7 @@ class Artikel extends BaseController
                 $no++;
                 $row = [];
                 $row[] = $no;
-                $row[] = $list->judul_artikel;
+                $row[] = '<img src="data:image/jpeg;base64,'.base64_encode($list->thumbnail_artikel).'" width="100px" height="100px"/>';
                 $row[] = $list->judul_artikel;
                 $row[] = $list->isi_artikel;
                 $row[] = $list->tag_artikel;
@@ -58,7 +54,7 @@ class Artikel extends BaseController
         $rules = [
             'judul_artikel' => 'required',
             'isi_artikel' => 'required',
-            'thumbnail_artikel' => 'is_image[thumbnail_artikel]|max_size[thumbnail_artikel,2048]',
+            'thumbnail_artikel' => 'required|max_size[thumbnail_artikel,2048]',
             'tag_artikel' => 'required',
             'kategori_artikel' => 'required'
         ];
